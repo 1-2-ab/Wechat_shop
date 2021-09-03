@@ -11,12 +11,7 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "分类页面",
-          "pathName": "pages/category/index",
-          "query": "",
-          "scene": null
-        }
+        
       ]
     }
   }
