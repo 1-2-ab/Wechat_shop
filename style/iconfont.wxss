@@ -1,4 +1,4 @@
-@font-face {
+  @font-face {
   font-family: "iconfont"; /* Project id 2676005 */
   src: url("//at.alicdn.com/t/font_2676005_oszt2cid1h9.woff2?t=1626318266644")
       format("woff2"),

@@ -1,2 +1,4 @@
-<!--pages/goos_list/index.wxml-->
-<text>pages/goos_list/index.wxml</text>
+<SearchInput></SearchInput>
+<Tabs tabs="{{tabs}}"></Tabs>
+
+  

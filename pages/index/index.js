@@ -16,7 +16,7 @@ Page({
     //   success: (result) => {
     //     console.log(result);
     //     this.setData({
-    //       swiperList: result.data.message,
+          // swiperList: result.data.message,
     //     });
     //   },
     // });
@@ -29,7 +29,8 @@ Page({
       url: "/home/swiperdata",
     }).then((result) => {
       this.setData({
-        swiperList: result.data.message,
+        // swiperList: result.data.message,
+        swiperList: result,
       });
     });
   },
@@ -38,7 +39,8 @@ Page({
       url: "/home/catitems",
     }).then((result) => {
       this.setData({
-        cateList: result.data.message,
+        // cateList: result.data.message,
+        cateList: result,
       });
     });
   },
@@ -47,7 +49,8 @@ Page({
       url: "/home/floordata",
     }).then((result) => {
       this.setData({
-        floorList: result.data.message,
+        // floorList: result.data.message,
+        floorList: result,
       });
     });
   },

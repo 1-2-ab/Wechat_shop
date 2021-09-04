@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -11,7 +12,12 @@
     },
     "miniprogram": {
       "list": [
-        
+        {
+          "name": "商品列表",
+          "pathName": "pages/goos_list/index",
+          "query": "cid=12",
+          "scene": null
+        }
       ]
     }
   }

@@ -55,30 +55,43 @@ Page({
     }
   },
   // 获取分类的数据
-  getCate() {
-    request({
-      url: "/categories",
-    }).then((res) => {
-      console.log(res);
-      this.Cates = res.data.message;
-      // web 中的本地存储 和 小程序中的本地存储的区别
-      /* 
-        1.写代码的方式不一样了
-        web:localStorage.setItem("key","value") localStorage.getItem("key")
-        小程序中 ：wx.setStorageSync("key","value") wx.getStorageSync("key")
-        2.存数据的时候 有没有做数据转换
-         web:不管存入什么样的数据，最终都会先调用一下 Tostring()，把数据转换为字符串 在存入进去
-         小程序:不存在 类型转换的这个操作 存什么类型的数据进去，获取的时候就是什么类型
-      */
-      wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
-      // 构建左侧的大菜单数据
-      let leftMenuList = this.Cates.map((v) => v.cat_name);
-      // 构建右侧的商品数据
-      let rightContent = this.Cates[0].children;
-      this.setData({
-        leftMenuList,
-        rightContent,
-      });
+  // getCate() {
+  //   request({
+  //     url: "/categories",
+  //   }).then((res) => {
+  //     console.log(res);
+  //     this.Cates = res.data.message;
+  //     // web 中的本地存储 和 小程序中的本地存储的区别
+  //     /*
+  //       1.写代码的方式不一样了
+  //       web:localStorage.setItem("key","value") localStorage.getItem("key")
+  //       小程序中 ：wx.setStorageSync("key","value") wx.getStorageSync("key")
+  //       2.存数据的时候 有没有做数据转换
+  //        web:不管存入什么样的数据，最终都会先调用一下 Tostring()，把数据转换为字符串 在存入进去
+  //        小程序:不存在 类型转换的这个操作 存什么类型的数据进去，获取的时候就是什么类型
+  //     */
+  //     wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
+  //     // 构建左侧的大菜单数据
+  //     let leftMenuList = this.Cates.map((v) => v.cat_name);
+  //     // 构建右侧的商品数据
+  //     let rightContent = this.Cates[0].children;
+  //     this.setData({
+  //       leftMenuList,
+  //       rightContent,
+  //     });
+  //   });
+  // },
+  async getCate() {
+    const res = await request({ url: "/categories" });
+    this.Cates = res;
+    wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
+    // 构建左侧的大菜单数据
+    let leftMenuList = this.Cates.map((v) => v.cat_name);
+    // 构建右侧的商品数据
+    let rightContent = this.Cates[0].children;
+    this.setData({
+      leftMenuList,
+      rightContent,
     });
   },
   // 左侧菜单点击事件
