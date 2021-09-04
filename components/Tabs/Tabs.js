@@ -21,6 +21,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleTabsIndex(e){
+      // console.log(e);
+      const {index} = e.currentTarget.dataset; 
+      this.triggerEvent('tabsItemChange',{index})
+    }
   }
 })

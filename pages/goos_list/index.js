@@ -22,5 +22,19 @@ Page({
         isActive:false
       },
     ]
+  },
+  // 标题点击事件 从子组件传递过来
+  handletabsItemChange(e){
+    // console.log(e);
+    // 1. 获取被点击的标题索引
+    const {index} = e.detail;
+    // console.log(index);
+    // 修改原数组
+    let {tabs} = this.data;
+    // console.log(tabs);
+    tabs.forEach((v,i)=>{i===index?v.isActive=true:v.isActive=false})
+    this.setData({
+      tabs
+    })
   }
 })
