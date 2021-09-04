@@ -2,16 +2,19 @@
 <Tabs tabs="{{tabs}}" bindtabsItemChange="handletabsItemChange">
   <block wx:if="{{tabs[0].isActive}}">
     <view class="first_tab">
-        <navigator class="goods_item">
+        <navigator class="goods_item"
+        wx:for="{{Goodlist}}"
+        wx:key="goods_id"
+        >
             <!-- 左侧 图片容器 -->
             <view class="good_img_warp">
-              <image mode="widthFix" src="http://image2.suning.cn/uimg/b2c/newcatentries/0070078057-000000000634917020_1_400x400.jpg" />
+              <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'http://image2.suning.cn/uimg/b2c/newcatentries/0070078057-000000000634917020_1_400x400.jpg'}}" />
                 
             </view>
             <!-- 右侧 图片容器 -->
             <view class="good_info_warp">
-              <view class="good_name"><text>索尼第一代晶体管电视机\n</text>  TV8-301 1955.8 索尼第一台晶体管收音机---TR-55 1950.7 索尼第一台磁带录音机---G 型机</view>
-              <view class="good_price">$3999</view>
+              <view class="good_name">{{item.goods_name}}</view>
+              <view class="good_price">${{item.goods_price}}</view>
             </view>
         </navigator>
     </view>
