@@ -19,9 +19,9 @@
           "scene": null
         },
         {
-          "name": "商品详情",
-          "pathName": "pages/goos_detail/index",
-          "query": "goods_is=17928",
+          "name": "商品分类",
+          "pathName": "pages/good_detail/index",
+          "query": "goods_id=43986",
           "scene": null
         }
       ]

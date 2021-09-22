@@ -1,10 +1,10 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/category/index",
     "pages/goos_list/index",
-    "pages/goos_detail/index",
-    "pages/cart/index", 
+    "pages/good_detail/index",
+    "pages/cart/index",
     "pages/collect/index",
     "pages/order/index",
     "pages/search/index",
@@ -14,11 +14,11 @@
     "pages/auth/index",
     "pages/pay/index"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#eb4450",
     "navigationBarTitleText": "我的商品",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#ccc",
@@ -38,12 +38,14 @@
         "text": "分类",
         "iconPath": "icons/category.png",
         "selectedIconPath": "icons/category_active.png"
-      },{
+      },
+      {
         "pagePath": "pages/cart/index",
         "text": "购物车",
         "iconPath": "icons/shopcart.png",
         "selectedIconPath": "icons/shopcart_active.png"
-      },{
+      },
+      {
         "pagePath": "pages/user/index",
         "text": "我的",
         "iconPath": "icons/profile.png",
@@ -51,8 +53,6 @@
       }
     ]
   },
-  
-    
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
