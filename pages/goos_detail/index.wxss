@@ -1,1 +1,10 @@
-/* pages/goos_detail/index.wxss */
+.detail_swiper {
+  height: 65vm;
+}
+.detail_swiper swiper {
+  height: 70vm;
+  text-align: center;
+}
+.detail_swiper swiper image {
+  width: 60%;
+}

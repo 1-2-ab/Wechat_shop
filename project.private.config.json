@@ -17,6 +17,12 @@
           "pathName": "pages/goos_list/index",
           "query": "cid=12",
           "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pages/goos_detail/index",
+          "query": "goods_is=17928",
+          "scene": null
         }
       ]
     }

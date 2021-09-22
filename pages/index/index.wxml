@@ -22,7 +22,7 @@
   <!-- 轮播结束 -->
   <!-- 导航开始 -->
   <view class="index_cate">
-    <navigator wx:for="{{cateList}}" wx:key="name">
+    <navigator wx:for="{{cateList}}" wx:key="name" >
       <image src="{{item.image_src}}" mode="widthFix"></image>
     </navigator>
   </view>

@@ -50,6 +50,7 @@ Page({
       // 用concat页可以获取数据
       // Goodlist: this.data.Goodlist.concat(res.goods)
     })
+    wx.stopPullDownRefresh()
   },
 
 
@@ -79,5 +80,17 @@ Page({
       this.QueryParams.pagenum++;
       this.getGoodslist()
     }
+  },
+  // 下拉刷新事件
+  onPullDownRefresh(){
+    // 1.重置数组
+    this.setData({
+      Goodlist: []
+    })
+    // 重置页码
+    this.QueryParams.pagenum = 1
+    // 发送请求
+    this.getGoodslist()
   }
+  
 })

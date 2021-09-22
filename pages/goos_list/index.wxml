@@ -5,6 +5,7 @@
         <navigator class="goods_item"
         wx:for="{{Goodlist}}"
         wx:key="goods_id"
+        url="/pages/goos_detail/index?goods_is={{item.goods_id}}"
         >
             <!-- 左侧 图片容器 -->
             <view class="good_img_warp">
