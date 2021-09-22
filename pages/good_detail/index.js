@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsObj: {}
+    goodsObj: {},
   },
 
   /**
@@ -40,6 +40,32 @@ Page({
       urls,
       current
     })
+  },
+
+  // 购物车
+  handleCart() {
+    // 1. 获取缓存中的购物车
+    let cart = wx.getStorageSync('cart')|| []
+    // console.log(cart);
+    // 2.判断 商品对象是否存在购物车数组中
+    let index =cart.findIndex(v=>v.goods_id === this.GoodInfo.goods_id)
+    console.log(index);
+    if (index === -1) {
+        // 3.不存在 第一次添加
+        this.GoodInfo.num = 1
+        cart.push( this.GoodInfo)
+    } else{
+        // 4,已经存在购物车中数据执行 num++
+        cart[index].num++ 
+    }
+    // 5. 把购物车重新添加回缓存中
+    wx.setStorageSync('cart', cart) 
+      // 6. 弹窗提示
+      wx.showToast({
+        title: '加入成功',
+        icon: 'success',
+        // 防抖 mask
+        mask: true
+      })
   }
-  
 })
